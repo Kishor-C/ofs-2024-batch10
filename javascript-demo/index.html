@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type = 'number' id = 'i1' />
+        <button onclick="fetchUser()">Search</button>
+    </div>
+    <div id = "user"></div>
+    <script type="text/javascript">
+        async function fetchUser() {
+            let input = document.getElementById("i1").value;
+            let url = `http://localhost:8888/users/${input}`;
+            try {
+                let res = await fetch(url);
+                let jsonData = await res.json(); // waits for json data to extract
+                // jsonData has properties like id, username, name, email, address.street
+                let ele = document.getElementById("user");
+                if(jsonData.name==undefined) {
+                    throw jsonData;
+                }
+                ele.innerHTML = `<p>Hello ${jsonData.name}</p>`
+             } catch(err) {
+                let ele = document.getElementById("user");
+                ele.innerHTML=`<p style='color:red'><i>${err.message}</p>`;
+             }
+            
+        }
+    </script>
+</body>
+</html>

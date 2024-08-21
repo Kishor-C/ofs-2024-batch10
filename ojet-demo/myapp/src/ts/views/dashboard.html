@@ -1,0 +1,21 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+
+  <oj-c-form-layout
+                  id="formLayoutOptions"
+                  max-columns="1"
+                  direction="row"
+                  user-assistance-density="compact">
+  <oj-c-input-text id="username" value="{{name}}" label-hint="Enter name"></oj-c-input-text>
+  <oj-c-input-password id="password" value="{{password}}" label-hint="Enter password"></oj-c-input-password>
+  <oj-c-input-number id="phone" value="{{phone}}" label-hint="Enter phone"></oj-c-input-number>
+  <oj-input-date-time label-hint="Enter dob in dd/MM/yyyy format" id="dob" value="{{dob}}"></oj-input-date-time>
+  <oj-c-button id="submit"  on-oj-action="[[handleClick]]"   label="Register" ></oj-c-button>
+  </oj-c-form-layout>
+
+  <oj-c-button id = "login" label="Login" on-oj-action="[[handleLogin]]"></oj-c-button>
+</div>

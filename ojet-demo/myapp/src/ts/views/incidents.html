@@ -1,0 +1,30 @@
+<!--
+ Copyright (c) 2014, 2024, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Incidents Content Area</h1>
+  <div>
+      To change the content of this section, you will make edits to the incidents.html file located in the /ts/views folder.
+  </div>
+
+  <div>
+    <h1>User Informations</h1>
+
+    <oj-table
+    id="table"
+    aria-label="User Table"
+    
+    data="[[dataprovider]]"
+    
+    columns='[{"headerText": "User Id", "field": "id", "id": "id"},
+              {"headerText": "User Name", "field": "name", "id": "name"},
+              {"headerText": "Phone", "field": "phone", "id": "phone"},
+              {"headerText": "Birthday", "field": "dob", "id": "dob"}]'
+    class="demo-table-container"></oj-table>
+  </div>
+  <!--
+    change const { data } to const data = body in the ts file
+  -->
+</div>
